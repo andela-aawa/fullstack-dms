@@ -7,18 +7,20 @@ const DocumentForm = ({ document, onSave, onChange, saving, errors }) => {
     <form>
       <h5>Create/Update a Document</h5>
       <Row>
-        <Input
-          label="Title"
-          placeholder="Title"
-          s={12}
-          validate
-          name="title"
-          onChange={onChange}
-          value={document.title}
-          error={errors.title}
-          id="title"
-        />
-        <div className="input-field col s12">
+        <div className="input-field col s6" style={{ marginBottom: 10 }}>
+          <Input
+            label="Title"
+            placeholder="Title"
+            s={12}
+            validate
+            name="title"
+            onChange={onChange}
+            value={document.title}
+            error={errors.title}
+            id="title"
+          />
+        </div>
+        <div className="input-field col s12" style={{ marginBottom: 10 }}>
           <TinyMCE
             id="content"
             content={document.content}
@@ -28,8 +30,9 @@ const DocumentForm = ({ document, onSave, onChange, saving, errors }) => {
             }}
             onChange={onChange}
           />
+          {errors.content && <div className="red-text">Enter Content</div>}
         </div>
-        <div className="input-field col s6">
+        <div className="input-field col s6" style={{ marginBottom: 10 }}>
           <select
             style={{ display: 'block' }}
             id="access"
@@ -43,14 +46,15 @@ const DocumentForm = ({ document, onSave, onChange, saving, errors }) => {
             <option value="role" >Role</option>
           </select>
         </div>
-
-        <Input
-          type="submit"
-          disabled={saving}
-          value={saving ? 'Saving...' : 'Save'}
-          className="btn waves-effect waves-light blue"
-          onClick={onSave}
-        />
+        <div className="input-field col s6" style={{ marginBottom: 10 }}>
+          <Input
+            type="submit"
+            disabled={saving}
+            value={saving ? 'Saving...' : 'Save'}
+            className="btn waves-effect waves-light blue"
+            onClick={onSave}
+          />
+        </div>
       </Row>
     </form>
   );
