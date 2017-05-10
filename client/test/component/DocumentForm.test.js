@@ -5,7 +5,7 @@ import DocumentForm from '../../components/documents/DocumentForm';
 
 function setup(saving) {
   const props = {
-    document: {},
+    document: { title: 'title', content: 'content', access: 'public' },
     saving,
     errors: {},
     onSave: () => {},
@@ -30,5 +30,11 @@ describe('DocumentForm', () => {
   it('save button is labeled "Saving..." when saving', () => {
     const wrapper = setup(true);
     expect(wrapper.find('Input').at(1).props().value).toBe('Saving...');
+  });
+
+  it('should receive the right user details when updating user', () => {
+    const wrapper = setup(false);
+    expect(wrapper.find('Input').at(0).props().value).toBe('title');
+    expect(wrapper.find('select').props().value).toBe('public');
   });
 });

@@ -5,7 +5,9 @@ import DocumentCard from '../../components/documents/DocumentCard';
 
 function setup() {
   const props = {
-    document: { title: '', content: '', access: '', owner: {} },
+    document: { title: 'title', content: 'content',
+     access: 'public',
+     owner: { firstName: 'awa', lastName: 'awa' } },
     deleteDocument: () => {},
     currentUser: {}
   };
@@ -22,5 +24,9 @@ describe('DocumentCard', () => {
   it('renders card', () => {
     const wrapper = setup();
     expect(wrapper.find('.card')).toExist;
+  });
+  it('receives the correct props', () => {
+    const wrapper = setup();
+    expect(wrapper.find('.card-title').text()).toEqual('title');
   });
 });
