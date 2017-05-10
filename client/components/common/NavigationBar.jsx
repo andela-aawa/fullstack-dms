@@ -22,12 +22,12 @@ class NavigationBar extends React.Component {
                 <span>Documents</span> : <span>Home</span>}</Link>
             </li>
             {user.roleId === 1
-                && <li><Link to="/users"><span>Users</span></Link></li>}
+                && <li><Link id="users" to="/users"><span>Users</span></Link></li>}
             <li>
               {!isAuthenticated
                 && <Link id="login" to="/login">Login</Link>}
             </li>
-            {isAuthenticated && <li><Link to="/editprofile">Profile</Link>
+            {isAuthenticated && <li><Link id="profile" to="/editprofile">Profile</Link>
             </li>}
             <li>
               {isAuthenticated

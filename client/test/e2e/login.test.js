@@ -1,7 +1,7 @@
 import config from './config';
 
 module.exports = {
-  'Login Users': (browser) => {
+  'Login User': (browser) => {
     browser
       .url(config.url)
       .waitForElementVisible('body')
