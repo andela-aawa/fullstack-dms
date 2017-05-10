@@ -1,9 +1,9 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { searchDocuments } from '../../actions/searchActions';
-import * as types from '../../actions/types';
 import expect from 'expect';
 import nock from 'nock';
+import { searchDocuments } from '../../actions/searchActions';
+import * as types from '../../actions/types';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -21,10 +21,12 @@ describe('User Actions', () => {
           body: { pagination: {}, rows: [{ title: 'queryString', content: 'Content here' }] } });
 
       const expectedActions = [{
-        type: types.SET_PAGINATION, pagination: { totalCount: 1,
-        pageSize: 2,
-        currentPage: 1,
-        pageCount: 6 } },
+        type: types.SET_PAGINATION,
+        pagination: {
+          totalCount: 1,
+          pageSize: 2,
+          currentPage: 1,
+          pageCount: 6 } },
         { type: types.ADD_USER, documents: [{ title: 'queryString', content: 'Content here' }] }];
 
       // const store = mockStore({ auth: {}, users: [],

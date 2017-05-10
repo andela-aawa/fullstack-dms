@@ -5,9 +5,11 @@ import DocumentCard from '../../components/documents/DocumentCard';
 
 function setup() {
   const props = {
-    document: { title: 'title', content: 'content',
-     access: 'public',
-     owner: { firstName: 'awa', lastName: 'awa' } },
+    document: {
+      title: 'title',
+      content: 'content',
+      access: 'public',
+      owner: { firstName: 'awa', lastName: 'awa' } },
     deleteDocument: () => {},
     currentUser: {}
   };

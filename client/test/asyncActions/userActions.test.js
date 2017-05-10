@@ -1,11 +1,11 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import expect from 'expect';
+import nock from 'nock';
 import * as actions from '../../actions/userActions';
 import userSignupRequest from '../../actions/signupActions';
 import * as auth from '../../actions/authActions';
 import * as types from '../../actions/types';
-import expect from 'expect';
-import nock from 'nock';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -20,21 +20,30 @@ describe('User Actions', () => {
       nock('http://localhost.com/')
         .get('/users')
         .reply(200, {
-          body: { pagination:
-                { totalCount: 1,
-                pageSize: 2,
-                currentPage: 1,
-                pageCount: 6 },
-              rows: [{ username: 'awa', firstName: 'awa',
-              lastName: 'awa', email: 'awa', password: 'awa' }] } });
+          body: {
+            pagination: {
+              totalCount: 1,
+              pageSize: 2,
+              currentPage: 1,
+              pageCount: 6 },
+            rows: [{
+              username: 'awa',
+              firstName: 'awa',
+              lastName: 'awa',
+              email: 'awa',
+              password: 'awa' }]
+          } });
 
       const expectedActions = [{ type: types.SET_USERS,
         users: [{ username: '', firstName: '', lastName: '', email: '', password: '' }] },
 
-      { type: types.SET_PAGINATION, pagination: { totalCount: 1,
-        pageSize: 2,
-        currentPage: 1,
-        pageCount: 6 } }];
+      { type: types.SET_PAGINATION,
+        pagination: {
+          totalCount: 1,
+          pageSize: 2,
+          currentPage: 1,
+          pageCount: 6 }
+      }];
 
       // const store = mockStore({ auth: {}, users: [],
       // users: [], search: [], paginate: {}, user: [] });
@@ -47,15 +56,18 @@ describe('User Actions', () => {
     });
   it('creates ADD_USER when sign up has been done',
     () => {
-      const user = { username: 'awa', firstName: 'awa',
-              lastName: 'awa', email: 'awa', password: 'awa' };
+      const user = {
+        username: 'awa',
+        firstName: 'awa',
+        lastName: 'awa',
+        email: 'awa',
+        password: 'awa' };
       nock('http://localhost.com/')
         .post('/users', user)
         .reply(200, {
           body: { user } });
 
-      const expectedActions = [{ type: types.ADD_USER,
-        user }];
+      const expectedActions = [{ type: types.ADD_USER, user }];
 
       // const store = mockStore({ auth: {}, users: [],
       // users: [], search: [], paginate: {}, user: [] });
