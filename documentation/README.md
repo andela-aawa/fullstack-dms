@@ -1,7 +1,7 @@
 # fullstack-dms
 [![Build Status](https://travis-ci.org/andela-aawa/fullstack-dms.svg?branch=staging)](https://travis-ci.org/andela-aawa/fullstack-dms)
 [![Code Climate](https://codeclimate.com/repos/58d66e5fd315de027d00160e/badges/476cf2c94d6f0ed1a4ab/gpa.svg)](https://codeclimate.com/repos/58d66e5fd315de027d00160e/feed)
-[![Test Coverage](https://codeclimate.com/repos/58d66e5fd315de027d00160e/badges/476cf2c94d6f0ed1a4ab/coverage.svg)](https://codeclimate.com/repos/58d66e5fd315de027d00160e/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/andela-aawa/fullstack-dms/badge.svg?branch=staging)](https://coveralls.io/github/andela-aawa/fullstack-dms?branch=staging)
 [![Issue Count](https://codeclimate.com/repos/58d66e5fd315de027d00160e/badges/476cf2c94d6f0ed1a4ab/issue_count.svg)](https://codeclimate.com/repos/58d66e5fd315de027d00160e/feed)
 
 Document Management System API contains several API end points that allows users to create, edit, retrieve and delete documents. It also offers a way to ensure that only authorized users can perform certain operations.
@@ -257,7 +257,7 @@ Fetches all users' details,
         "title": "consectetur",
         "content": "enim ex velit",
         "access": "public",
-        "OwnerId": 3,
+        "ownerId": 3,
         "RoleId": 2,
         "createdAt": "2017-04-21T05:31:16.778Z",
         "updatedAt": "2017-04-21T05:31:16.778Z"
@@ -267,7 +267,7 @@ Fetches all users' details,
         "title": "Re act Test Full Rendering API",
         "content": "Re\nact Test Full Rendering API",
         "access": "public",
-        "OwnerId": 3,
+        "ownerId": 3,
         "RoleId": 2,
         "createdAt": "2017-04-21T05:33:01.265Z",
         "updatedAt": "2017-04-21T05:33:01.265Z"
@@ -277,7 +277,7 @@ Fetches all users' details,
         "title": "et",
         "content": "aut debitis omnis",
         "access": "public",
-        "OwnerId": 3,
+        "ownerId": 3,
         "RoleId": 2,
         "createdAt": "2017-04-21T05:34:15.168Z",
         "updatedAt": "2017-04-21T05:34:15.168Z"
@@ -287,7 +287,7 @@ Fetches all users' details,
         "title": "similique",
         "content": "Aut dolorum quos",
         "access": "public",
-        "OwnerId": 3,
+        "ownerId": 3,
         "RoleId": 2,
         "createdAt": "2017-04-21T05:36:09.373Z",
         "updatedAt": "2017-04-21T05:49:32.626Z"
@@ -390,7 +390,7 @@ DOCUMENTS
   "title": "Marvel",
   "content": "Diary of a movie addict",
   "access": "public",
-  "OwnerId": 3,
+  "ownerId": 3,
   "RoleId": 1,
   "updatedAt": "2017-04-21T11:29:49.031Z",
   "createdAt": "2017-04-21T11:29:49.031Z"
@@ -410,7 +410,7 @@ DOCUMENTS
     "title": "Marvel",
     "content": "Diary of a movie addict",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 1,
     "createdAt": "2017-04-21T11:29:49.031Z",
     "updatedAt": "2017-04-21T11:29:49.031Z"
@@ -420,7 +420,7 @@ DOCUMENTS
     "title": "similique",
     "content": "Aut dolorum quos",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:36:09.373Z",
     "updatedAt": "2017-04-21T05:49:32.626Z"
@@ -430,7 +430,7 @@ DOCUMENTS
     "title": "et",
     "content": "aut debitis omnis",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:34:15.168Z",
     "updatedAt": "2017-04-21T05:34:15.168Z"
@@ -440,7 +440,7 @@ DOCUMENTS
     "title": "Re act Test Full Rendering API",
     "content": "Re\nact Test Full Rendering API",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:33:01.265Z",
     "updatedAt": "2017-04-21T05:33:01.265Z"
@@ -450,7 +450,7 @@ DOCUMENTS
     "title": "consectetur",
     "content": "enim ex velit",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:31:16.778Z",
     "updatedAt": "2017-04-21T05:31:16.778Z"
@@ -470,7 +470,7 @@ DOCUMENTS
     "title": "consectetur",
     "content": "enim ex velit",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:31:16.778Z",
     "updatedAt": "2017-04-21T05:31:16.778Z"
@@ -493,7 +493,7 @@ DOCUMENTS
   "title": "The accountant",
   "content": "enim ex velit",
   "access": "public",
-  "OwnerId": 3,
+  "ownerId": 3,
   "RoleId": 2,
   "createdAt": "2017-04-21T05:31:16.778Z",
   "updatedAt": "2017-04-21T11:33:18.850Z"
@@ -556,7 +556,7 @@ Search
     "title": "The accountant",
     "content": "enim ex velit",
     "access": "public",
-    "OwnerId": 3,
+    "ownerId": 3,
     "RoleId": 2,
     "createdAt": "2017-04-21T05:31:16.778Z",
     "updatedAt": "2017-04-21T11:33:18.850Z"

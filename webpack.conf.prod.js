@@ -3,7 +3,8 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-    path.join(__dirname, '/client/index.js')
+    'babel-polyfill',
+    path.join(__dirname, '/client/index.jsx')
   ],
   output: {
     path: './dist/client',
@@ -23,7 +24,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: [
           path.join(__dirname, 'client'),
           path.join(__dirname, 'server/shared')
@@ -31,13 +32,13 @@ module.exports = {
         loaders: ['react-hot', 'babel']
       },
       {
-        test: /\.css$/,
-        loaders: ['css-loader']
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   resolve: {
-    extentions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   },
   node: {
     net: 'empty',

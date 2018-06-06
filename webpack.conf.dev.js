@@ -4,8 +4,9 @@ import webpack from 'webpack';
 export default {
   devtools: 'eval-source-map',
   entry: [
+    'babel-polyfill',
     'webpack-hot-middleware/client',
-    path.join(__dirname, '/client/index.js')
+    path.join(__dirname, '/client/index.jsx')
   ],
   output: {
     path: '/',
@@ -24,7 +25,7 @@ export default {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: [
           path.join(__dirname, 'client'),
           path.join(__dirname, 'server/shared')
@@ -32,13 +33,13 @@ export default {
         loaders: ['react-hot', 'babel']
       },
       {
-        test: /\.css$/,
-        loaders: ['css-loader']
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
   resolve: {
-    extentions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   },
   node: {
     net: 'empty',

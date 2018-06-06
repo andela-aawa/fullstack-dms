@@ -11,7 +11,7 @@ import webpackMiddleware from 'webpack-dev-middleware';
 
 import webpackConfig from '../webpack.conf.dev';
 
-import routes from './routes';
+import routes from './config/routes';
 
 dotenv.load();
 

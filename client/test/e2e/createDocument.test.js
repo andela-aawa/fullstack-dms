@@ -6,7 +6,7 @@ module.exports = {
     browser
      .url(config.url)
      .click('#login')
-     .setValue('Input[name=identifier]', 'assahna.awa@aun.edu.ng')
+     .setValue('Input[name=identifier]', 'awa@awa.com')
      .setValue('Input[name=password]', 'awa')
      .click('Input[type=submit]')
      .pause(5000)

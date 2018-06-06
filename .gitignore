@@ -10,3 +10,4 @@ selenium-debug.log
 chromedriver
 dist
 selenium-debug.log
+.coveralls.yml

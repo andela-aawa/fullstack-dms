@@ -1,7 +1,8 @@
+import faker from 'faker';
+
 if (process.env.NODE_ENV !== 'test') {
   process.exit(1);
 }
-const faker = require('faker');
 
 module.exports = {
   adminRole: {
@@ -64,10 +65,27 @@ module.exports = {
       documentAttributes.push({
         title: faker.company.catchPhrase(),
         content: faker.lorem.paragraph(),
-        OwnerId: 1
+        ownerId: 1
       });
     }
 
     return documentAttributes;
+  },
+
+  userArray() {
+    const userAttributes = [];
+
+    for (let i = 0; i <= 10; i += 1) {
+      userAttributes.push({
+        username: faker.internet.userName(),
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+        roleId: 2
+      });
+    }
+
+    return userAttributes;
   }
 };
