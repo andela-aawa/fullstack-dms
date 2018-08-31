@@ -2,7 +2,7 @@ const env = process.env.NODE_ENV || 'development';
 
 const gulp = require('gulp');
 const spawn = require('child_process').spawn;
-const config = require('./server/config/config.json')[env];
+const config = require('./server/db/config.json')[env];
 
 // Create database
 gulp.task('db:create', () =>

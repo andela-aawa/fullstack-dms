@@ -13,6 +13,7 @@
     "coveralls": "npm test && cat ./coverage/lcov.info | coveralls",
     "db:create": "gulp db:create",
     "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo:all",
     "db:setup": "npm run db:create && npm run db:migrate",
     "db:seed": "sequelize db:seed:all",
     "db:create:test": "NODE_ENV=test gulp db:create",

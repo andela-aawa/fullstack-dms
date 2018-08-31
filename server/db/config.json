@@ -1,7 +1,8 @@
 {
   "development": {
     "database": "dms",
-    "use_env_variable": "DATABASE_URL",
+    "username": "aassahna",
+    "password": "",
     "dialect": "postgres",
     "seederStorage": "sequelize"
   },
